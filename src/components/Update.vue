@@ -49,10 +49,12 @@ export default {
         {
             this.$router.push({ name: "SignUp" });
         }
-        this.name = JSON.parse(user).name;
-        let result = await axios.get("http://localhost:3000/restaurant/"+this.$route.params.id)
-        console.log(this.$route.params.id)
-        this.restaurant = result.data 
+        else{
+          this.name = JSON.parse(user).name;
+          let result = await axios.get("http://localhost:3000/restaurant/"+this.$route.params.id)
+          console.log(this.$route.params.id)
+          this.restaurant = result.data 
+        }
     },
     methods: {
       async update()

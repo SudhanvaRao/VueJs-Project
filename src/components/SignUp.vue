@@ -1,5 +1,6 @@
 <template>
-  <img class="logo" alt="Food logo" src="../assets/img/LogoFood.png" />
+  <Header />
+  <img class="logo mt-3" alt="Food logo" src="../assets/img/LogoFood.png" />
   <h1>SignUp</h1>
 
   <div class="container form-group col-3">
@@ -18,6 +19,7 @@
 
 <script>
 import axios from "axios";
+import Header from './header.vue';
 
 export default {
   name: "SignUp",
@@ -28,7 +30,7 @@ export default {
       password: "",
     };
   },
-  components: {},
+  components: {Header},
   async mounted() {
     let user = localStorage.getItem("user-info");
     if (user) {

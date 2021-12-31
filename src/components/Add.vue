@@ -41,14 +41,15 @@ export default {
         }
     },
     mounted(){
-        let user = localStorage.getItem('user-info')
-        
-        this.name = JSON.parse(user).name;
+        let user = localStorage.getItem('user-info');
         if(!user)
         {
             this.$router.push({ name: "SignUp" });
         }
-        this.restaurant.user_id = JSON.parse(user).id
+        else{
+            this.name = JSON.parse(user).name;
+            this.restaurant.user_id = JSON.parse(user).id
+        }
     },
     methods:{
         async Add()

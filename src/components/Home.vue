@@ -67,12 +67,13 @@ export default {
       if (!user) {
           this.$router.push({ name: "SignUp" });
       }
-      
-      this.name = JSON.parse(user).name;
-      this.user_id = JSON.parse(user).id;
-      console.log(this.user_id)
-      let result = await axios.get('http://localhost:3000/restaurant')
-      this.restaurants = result.data;
+      else{
+        this.name = JSON.parse(user).name;
+        this.user_id = JSON.parse(user).id;
+        console.log(this.user_id)
+        let result = await axios.get('http://localhost:3000/restaurant')
+        this.restaurants = result.data;
+      }
 
     }
   },

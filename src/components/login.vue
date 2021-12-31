@@ -1,5 +1,6 @@
 <template>
-  <img class="logo" alt="Food logo" src="../assets/img/LogoFood.png" />
+  <Header />
+  <img class="logo mt-3" alt="Food logo" src="../assets/img/LogoFood.png" />
   <h1>Log-in</h1>
 
   <div class="container form-group col-3">
@@ -17,7 +18,9 @@
 
 <script>
 import axios from "axios";
+import Header from './header.vue';
 export default {
+  components: { Header },
   name: "LogIn",
   data() {
     return {
