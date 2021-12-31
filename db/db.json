@@ -1,0 +1,67 @@
+{
+    "user": [{
+            "name": "sudu",
+            "password": "sudududu",
+            "email": "sudu@test",
+            "id": 1
+        },
+        {
+            "name": "User2",
+            "password": "aids",
+            "email": "User@user",
+            "id": 2
+        },
+        {
+            "name": "user1",
+            "password": "suduuser222",
+            "email": "user1@user",
+            "id": 3
+        },
+        {
+            "name": "user3",
+            "password": "sudunvjd",
+            "email": "user3@user",
+            "id": 4
+        },
+        {
+            "name": "ddd",
+            "password": "ddd",
+            "email": "ddd",
+            "id": 5
+        },
+        {
+            "name": "",
+            "password": "",
+            "email": "",
+            "id": 6
+        },
+        {
+            "name": "asd",
+            "password": "sdf",
+            "email": "asdfg",
+            "id": 7
+        }
+    ],
+    "restaurant": [{
+            "user_id": "1",
+            "name": "Resto200",
+            "address": "Address2",
+            "contact": "1234567890",
+            "id": 2
+        },
+        {
+            "user_id": "1",
+            "name": "Resto3",
+            "address": "Address3",
+            "contact": "12345678890",
+            "id": 3
+        },
+        {
+            "user_id": "2",
+            "name": "Resto5",
+            "address": "Address5",
+            "contact": "12345",
+            "id": 4
+        }
+    ]
+}
