@@ -59,7 +59,12 @@ export default {
     methods: {
       async update()
       {
-          console.warn(this.restaurant)
+          let user = localStorage.getItem('user-info')
+          let user_id=JSON.parse(user).id;
+
+          if(user_id == this.restaurant.user_id)
+          {
+            console.warn(this.restaurant)
             let result =  await axios.put("http://localhost:3000/restaurant/"+this.$route.params.id, {
               name: this.restaurant.name,
               address: this.restaurant.address,
@@ -72,6 +77,10 @@ export default {
             {
                 this.$router.push({ name: "Home" });
             }
+          }
+          else{
+            this.$router.push({ name: "SignUp" });
+          }
       }
     }
 };

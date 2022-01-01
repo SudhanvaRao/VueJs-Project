@@ -54,17 +54,26 @@ export default {
     methods:{
         async Add()
         {
-            console.warn(this.restaurant)
-            let result =  await axios.post("http://localhost:3000/restaurant", {
-            name: this.restaurant.name,
-            address: this.restaurant.address,
-            contact: this.restaurant.contact,
-            user_id: this.restaurant.user_id
-            });
-            
-            if(result.status==201)
+            let user = localStorage.getItem('user-info')
+            let user_id=JSON.parse(user).id;
+
+            if(user_id == this.restaurant.user_id)
             {
-                this.$router.push({ name: "Home" });
+                console.warn(this.restaurant)
+                let result =  await axios.post("http://localhost:3000/restaurant", {
+                    name: this.restaurant.name,
+                    address: this.restaurant.address,
+                    contact: this.restaurant.contact,
+                    user_id: this.restaurant.user_id
+                });
+                if(result.status==201)
+                {
+                    this.$router.push({ name: "Home" });
+                }
+            }
+            else
+            {
+                this.$router.push({ name: "SignUp" });
             }
             
         },

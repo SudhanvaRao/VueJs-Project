@@ -54,10 +54,14 @@ export default {
   methods:{
     async delResto(id)
     {
-        let result = await axios.delete('http://localhost:3000/restaurant/'+id)
-        if(result.status==200)
+        let r = await axios.get("http://localhost:3000/restaurant/"+id)
+        if(this.user_id == r.data.user_id)
         {
-            this.loadData();
+          let result = await axios.delete('http://localhost:3000/restaurant/'+id)
+          if(result.status==200)
+          {
+              this.loadData();
+          }
         }
     },
     async loadData()
